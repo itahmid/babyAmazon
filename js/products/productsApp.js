@@ -11,4 +11,11 @@ angular.module("productsApp", ["ngRoute"])
 
       })
 
+      .when("/expandedProduct/:index", {
+
+        templateUrl:"views/expandedProduct.html",
+        controller:"productsCtrl"
+
+      });
+
   });

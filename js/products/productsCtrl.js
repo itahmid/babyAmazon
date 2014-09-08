@@ -1,7 +1,10 @@
 angular.module("productsApp")
 
-  .controller("productsCtrl", function($scope) {
+  .controller("productsCtrl", function($scope, productsSvc, $routeParams, $log) {
 
-    $scope.productWelcome = "Welcome to the products page"
+    $scope.inventory = productsSvc.getInventory();
+    $scope.singleProduct = productsSvc.getItem($routeParams.index);
+
+    console.log($scope.singleProduct);
 
   });

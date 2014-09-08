@@ -1,7 +1,7 @@
 angular.module("babyAmazon")
 
-  .controller("homeCtrl", function($scope) {
+  .controller("homeCtrl", function($scope, productsSvc) {
 
-    $scope.welcome = "Welcome to the page";
+    $scope.inventory = productsSvc.getInventory();
 
   });

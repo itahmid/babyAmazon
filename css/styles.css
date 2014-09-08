@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: sans-serif; }
+
+header h1, header nav {
+  display: inline-block; }
+header nav p {
+  display: inline-block; }
+
+.inventoryContainer {
+  margin: 1%; }
+  .inventoryContainer .product {
+    margin: 1%;
+    padding: 1%;
+    width: 45%;
+    height: 300px;
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid black; }
+  .inventoryContainer .productInfo {
+    display: inline-block;
+    width: 45%;
+    vertical-align: top; }
+  .inventoryContainer .productName a {
+    text-decoration: none;
+    color: black; }
+  .inventoryContainer .productName a:hover {
+    text-decoration: underline; }
+  .inventoryContainer .productImage {
+    width: 45%;
+    height: 200px;
+    display: inline-block;
+    text-align: center; }
