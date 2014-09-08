@@ -4,4 +4,11 @@ angular.module("babyAmazon")
 
     $scope.inventory = productsSvc.getInventory();
 
+    $scope.deleteProduct = function(index) {
+
+      productsSvc.deleteInventoryItem(index);
+
+    };
+
+
   });

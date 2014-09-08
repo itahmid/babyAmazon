@@ -1,4 +1,5 @@
 <div class="inventoryContainer">
+
   <div class="product" ng-repeat="product in inventory">
     <img class="productImage" ng-src="{{product.productImage}}" alt="">
     <div class="productInfo">
@@ -7,6 +8,7 @@
     </div>
     <p class="productDescription">{{product.productDescription.substring(0, 200)}}...<a href="#/expandedProduct/{{$index}}">Learn More</a></p>
     <a class="productEdit" href="#/editProduct/{{$index}}">Edit Product</a>
+    <a class="productDelete" href="" ng-click="deleteProduct($index)">Delete Product</a>
   </div>
 
 </div>

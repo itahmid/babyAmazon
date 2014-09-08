@@ -1,6 +1,6 @@
 angular.module("productsApp")
 
-  .controller("productsCtrl", function($scope, productsSvc, $routeParams, $location) {
+  .controller("productsCtrl", function($scope, productsSvc, $routeParams, $location, $rootScope) {
 
     $scope.inventory = productsSvc.getInventory();
     $scope.singleProduct = productsSvc.getItem($routeParams.index);
@@ -21,10 +21,22 @@ angular.module("productsApp")
 
     };
 
+    $rootScope.$on("product:added", function() {
+
+      $scope.inventory = productsSvc.getInventory();
+
+    });
+
     $scope.editProduct = function() {
 
+      productsSvc.editInventoryItem();
       $location.path("/");
 
     };
 
+    $rootScope.$on("product:edited", function() {
+
+      $scope.inventory = productsSvc.getInventory();
+
+    });
   });

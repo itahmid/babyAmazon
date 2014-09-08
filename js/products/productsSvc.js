@@ -1,6 +1,6 @@
 angular.module("productsApp")
 
-  .factory("productsSvc", function() {
+  .factory("productsSvc", function($rootScope, $log) {
 
     var _inventory = [
 
@@ -46,6 +46,23 @@ angular.module("productsApp")
     var addInventoryItem = function(newItem) {
 
       _inventory.push(newItem);
+      $rootScope.$broadcast("product:added");
+      $log.info("product:added");
+
+    };
+
+    var editInventoryItem = function() {
+
+      $rootScope.$broadcast("product:edited");
+      $log.info("product:edited");
+
+    };
+
+    var deleteInventoryItem = function(index) {
+
+      _inventory.splice(index, 1);
+      $rootScope.$broadcast("product:deleted");
+      $log.info("product:deleted");
 
     };
 
@@ -53,7 +70,9 @@ angular.module("productsApp")
 
       getInventory:getInventory,
       addInventoryItem:addInventoryItem,
-      getItem:getItem
+      getItem:getItem,
+      editInventoryItem:editInventoryItem,
+      deleteInventoryItem:deleteInventoryItem
 
     }
 

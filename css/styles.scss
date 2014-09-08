@@ -1,26 +1,56 @@
+$blue:#3C56FF;
+$lightblue:#367DE8;
+$lightestblue:#49C1FF;
+$clay:#FF604C;
+
 body{
   margin:0;
   padding:0;
   width:100%;
   font-family:sans-serif;
+  background-color:$clay;
 }
 
 header {
+  background-color:$blue;
+  color:white;
 
   h1, nav {
     display:inline-block;
   }
 
+  h1 {
+    letter-spacing:3px;
+  }
+
+  .fi-social-amazon {
+    vertical-align:-9px;
+    font-size:1.2em;
+  }
+
   nav {
+    width:50%;
 
     p {
       display:inline-block;
+      margin:0 1%;
+
+      a {
+        color:white;
+        text-decoration:none;
+      }
+
+      a:hover {
+        color:$clay;
+      }
     }
   }
 }
 
 .inventoryContainer {
-  margin:1%;
+  margin:0%;
+  text-align:center;
+  background-color:$clay;
 
   .product {
     margin:1%;
@@ -30,6 +60,7 @@ header {
     display:inline-block;
     vertical-align:top;
     border:1px solid black;
+    background-color:white;
   }
 
   .productInfo {
@@ -42,7 +73,7 @@ header {
 
     a {
       text-decoration:none;
-      color:black;
+      color:$lightblue;
     }
 
     a:hover {
@@ -55,5 +86,29 @@ header {
     height:200px;
     display:inline-block;
     text-align:center;
+  }
+
+  .productDescription {
+    margin-bottom:5%;
+
+    a {
+      color:$lightblue;
+    }
+  }
+
+  .productEdit, .productDelete {
+    margin:0 5px;
+    color:$lightblue;
+  }
+}
+
+.editProductContainer {
+  margin:0;
+  padding:2%;
+  background-color:$clay;
+
+  h2 {
+    margin:0;
+    padding:1% 0;
   }
 }
