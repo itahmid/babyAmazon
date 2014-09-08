@@ -10,7 +10,7 @@ angular.module("productsApp")
       productsSvc.addInventoryItem({
 
         productName:product.name,
-        productPrice:product.price,
+        productPrice:product.amount,
         productDescription:product.description,
         productImage:product.image
 
