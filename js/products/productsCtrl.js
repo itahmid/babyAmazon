@@ -1,10 +1,30 @@
 angular.module("productsApp")
 
-  .controller("productsCtrl", function($scope, productsSvc, $routeParams, $log) {
+  .controller("productsCtrl", function($scope, productsSvc, $routeParams, $location) {
 
     $scope.inventory = productsSvc.getInventory();
     $scope.singleProduct = productsSvc.getItem($routeParams.index);
 
-    console.log($scope.singleProduct);
+    $scope.addProduct = function(product) {
+
+      productsSvc.addInventoryItem({
+
+        productName:product.name,
+        productPrice:product.price,
+        productDescription:product.description,
+        productImage:product.image
+
+
+      });
+
+      $location.path("/");
+
+    };
+
+    $scope.editProduct = function() {
+
+      $location.path("/");
+
+    };
 
   });

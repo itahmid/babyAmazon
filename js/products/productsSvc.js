@@ -45,7 +45,7 @@ angular.module("productsApp")
 
     var addInventoryItem = function(newItem) {
 
-      inventory.push(newItem);
+      _inventory.push(newItem);
 
     };
 

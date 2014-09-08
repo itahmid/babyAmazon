@@ -16,6 +16,13 @@ angular.module("productsApp", ["ngRoute"])
         templateUrl:"views/expandedProduct.html",
         controller:"productsCtrl"
 
+      })
+
+      .when("/editProduct/:index", {
+
+        templateUrl:"views/editProduct.html",
+        controller:"productsCtrl"
+
       });
 
   });
