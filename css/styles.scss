@@ -176,8 +176,9 @@ footer {
 
   a {
     display:block;
+    width:10%;
     text-decoration:none;
-    padding:0 4.5%;
+    padding:0 4%;
     padding-top: 1%;
     color:black;
   }
@@ -185,6 +186,11 @@ footer {
   a:hover {
     text-decoration:underline;
     color:$blue;
+  }
+
+  .deleteProduct {
+    padding:0 3.25%;
+    padding-top:1%;
   }
 
   .adminProductImage {
@@ -207,4 +213,8 @@ footer {
       margin-bottom:0;
     }
   }
+}
+
+.shoppingCartProduct {
+  border-bottom:1px solid black;
 }

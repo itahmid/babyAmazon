@@ -1,6 +1,8 @@
 angular.module("babyAmazon")
 
-  .controller("homeCtrl", function($scope, adminSvc, $rootScope, $routeParams) {
+  .controller("homeCtrl", function($scope, adminSvc, $rootScope, $routeParams, $log) {
+
+    $scope.userShoppingCart = adminSvc.userShoppingCart;
 
     //Function to get my inventory from the server and set it to the view $scope.
     adminSvc.getInventory().success(function(inventory) {
@@ -29,35 +31,18 @@ angular.module("babyAmazon")
         productImage:product.productImage,
         productQuantity:Number(product.productQuantity),
         productPrice:product.productPrice,
-        productDescription:product.productDescription,
-        productTotal:(Number(product.productQuantity) * product.productPrice)
+        productDescription:product.productDescription
 
       });
 
-    };
-
-    $scope.checkoutTotal = function() {
-
-      var total = "";
-
-      for (var i = 0; i < adminSvc.userShoppingCart.length; i ++) {
-
-        return total += adminSvc.userShoppingCart[i].productTotal;
-
-      };
+      $rootScope.$broadcast("shoppingCart:updated");
+      $log.info("shoppingCart:updated");
 
     };
+
+    $scope.checkoutTotal = adminSvc.checkoutTotal();
 
 //$rootScope listeners to re-render page when a CRUD event occurs//
-    $rootScope.$on("product:deleted", function() {
-
-      adminSvc.getInventory().success(function(inventory) {
-
-        $scope.inventory = inventory;
-
-      });
-
-    });
 
     $rootScope.$on("product:edited", function() {
 
@@ -76,6 +61,12 @@ angular.module("babyAmazon")
         $scope.inventory = inventory;
 
       });
+
+    });
+
+    $rootScope.$on("shoppingCart:updated", function() {
+
+      $scope.checkoutTotal;
 
     });
 

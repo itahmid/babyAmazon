@@ -108,13 +108,17 @@ footer {
   background-color: white; }
   .productSummary a {
     display: block;
+    width: 10%;
     text-decoration: none;
-    padding: 0 4.5%;
+    padding: 0 4%;
     padding-top: 1%;
     color: black; }
   .productSummary a:hover {
     text-decoration: underline;
     color: #3C56FF; }
+  .productSummary .deleteProduct {
+    padding: 0 3.25%;
+    padding-top: 1%; }
   .productSummary .adminProductImage {
     margin: 0;
     padding: 0;
@@ -128,3 +132,6 @@ footer {
       margin-top: 1%; }
     .productSummary .adminProductInfo .adminProductDescription {
       margin-bottom: 0; }
+
+.shoppingCartProduct {
+  border-bottom: 1px solid black; }

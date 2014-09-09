@@ -1,4 +1,5 @@
-<!-- #/admin page -->
+<!-- templateUrl:"views/admin/adminHome.html" | controller:"adminCtrl" -->
+
 <header>
   <h1>b<span class="fi-social-amazon"></span>byAmazon admin</h1>
   <nav>
@@ -17,6 +18,7 @@
       <p class="adminProductDescription">{{product.productDescription}}</p>
     </div>
     <a href="/#/admin/editProduct/{{product._id}}">Edit Product</a>
+    <a class="deleteProduct" href="" ng-click="deleteProduct(product._id)">Delete Product</a>
   </div>
 </section>
 

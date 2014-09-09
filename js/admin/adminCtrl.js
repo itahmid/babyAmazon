@@ -32,6 +32,14 @@ angular.module("adminApp")
 
     };
 
+    //Function to delete product from the inventory
+
+    $scope.deleteProduct = function(productId) {
+
+      adminSvc.deleteInventoryItem(productId);
+
+    };
+
     $rootScope.$on("product:added", function() {
 
       $scope.inventory = adminSvc.getInventory();
@@ -43,6 +51,16 @@ angular.module("adminApp")
       adminSvc.editInventoryItem(product);
 
     };
+
+    $rootScope.$on("product:deleted", function() {
+
+      adminSvc.getInventory().success(function(inventory) {
+
+        $scope.inventory = inventory;
+
+      });
+
+    });
 
     $rootScope.$on("product:edited", function() {
 
