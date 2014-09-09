@@ -20,19 +20,31 @@ angular.module("babyAmazon")
     $scope.userShoppingCart = adminSvc.userShoppingCart;
 
     //Function to add an item to the shopping cart.
+
     $scope.addToShoppingCart = function(product) {
 
       adminSvc.userShoppingCart.push({
 
         productName:product.productName,
         productImage:product.productImage,
-        productQuantity:product.productQuantity,
+        productQuantity:Number(product.productQuantity),
         productPrice:product.productPrice,
-        productDescription:product.productDescription
+        productDescription:product.productDescription,
+        productTotal:(Number(product.productQuantity) * product.productPrice)
 
       });
 
-      console.log(adminSvc.userShoppingCart);
+    };
+
+    $scope.checkoutTotal = function() {
+
+      var total = "";
+
+      for (var i = 0; i < adminSvc.userShoppingCart.length; i ++) {
+
+        return total += adminSvc.userShoppingCart[i].productTotal;
+
+      };
 
     };
 

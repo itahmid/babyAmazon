@@ -31,10 +31,10 @@ footer {
   margin-top: 1%;
   background-color: #3C56FF; }
   footer a {
-    padding-left: 5px;
-    vertical-align: -40px;
+    padding: 2.8% 2%;
     color: white;
-    text-decoration: none; }
+    text-decoration: none;
+    float: left; }
   footer a:hover {
     text-decoration: underline; }
 

@@ -1,3 +1,5 @@
+<!-- templateUrl:"views/user/shoppingCart.html" | controller:"homeCtrl" -->
+
 <header>
   <h1>b<span class="fi-social-amazon"></span>byAmazon</h1>
   <nav>
@@ -10,10 +12,11 @@
 <div class="shoppingCartContainer">
 
   <div ng-repeat="product in userShoppingCart">
-
     <img ng-src="{{product.productImage}}">
-    <h3>{{product.productName}} | <em>{{product.productPrice | currency}}</em></h3>
-
+    <h3>{{product.productName}} | Price: <em>{{product.productPrice | currency}}</em> | Quantity: {{product.productQuantity}}</h3>
+    <h4>Subtotal: {{product.productTotal | currency}}</h4>
   </div>
+
+  <h1>Total: <span ng-init="checkoutTotal()">{{checkoutTotal() | currency}}</span></h1>
 
 </div>
