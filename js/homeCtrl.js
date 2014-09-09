@@ -1,6 +1,6 @@
 angular.module("babyAmazon")
 
-  .controller("homeCtrl", function($scope, productsSvc) {
+  .controller("homeCtrl", function($scope, productsSvc, $rootScope) {
 
     $scope.inventory = productsSvc.getInventory();
 
