@@ -1,13 +1,13 @@
-angular.module("productsApp")
+angular.module("adminApp")
 
-  .controller("productsCtrl", function($scope, productsSvc, $routeParams, $location, $rootScope) {
+  .controller("adminCtrl", function($scope, adminProductSvc, $routeParams, $location, $rootScope) {
 
-    $scope.inventory = productsSvc.getInventory();
-    $scope.singleProduct = productsSvc.getItem($routeParams.index);
+    $scope.inventory = adminProductSvc.getInventory();
+    $scope.singleProduct = adminProductSvc.getItem($routeParams.index);
 
     $scope.addProduct = function(product) {
 
-      productsSvc.addInventoryItem({
+      adminProductSvc.addInventoryItem({
 
         productName:product.name,
         productPrice:product.amount,
@@ -23,20 +23,20 @@ angular.module("productsApp")
 
     $rootScope.$on("product:added", function() {
 
-      $scope.inventory = productsSvc.getInventory();
+      $scope.inventory = adminProductSvc.getInventory();
 
     });
 
     $scope.editProduct = function() {
 
-      productsSvc.editInventoryItem();
+      adminProductSvc.editInventoryItem();
       $location.path("/");
 
     };
 
     $rootScope.$on("product:edited", function() {
 
-      $scope.inventory = productsSvc.getInventory();
+      $scope.inventory = adminProductSvc.getInventory();
 
     });
   });

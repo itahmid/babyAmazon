@@ -1,0 +1,27 @@
+<header>
+  <h1>b<span class="fi-social-amazon"></span>byAmazon</h1>
+  <nav>
+    <p><a href="/#"><span class="fi-home"></span> Home</a></p>
+    <p><a href="/#/shoppingCart"><span class="fi-shopping-cart"></span> Shopping Cart</a></p>
+
+  </nav>
+</header>
+
+<div class="inventoryContainer">
+
+  <div class="product" ng-repeat="product in inventory">
+    <img class="productImage" ng-src="{{product.productImage}}" alt="">
+    <div class="productInfo">
+      <h2 class="productName"><a href="#/expandedProduct/{{product._id}}">{{product.productName}}</a></h2>
+      <h3 class="productPrice">{{product.productPrice | currency}}</h3>
+    </div>
+    <p class="productDescription">{{product.productDescription.substring(0, 200)}}...</p>
+    <a href="#/expandedProduct/{{product._id}}">Learn More</a>
+    <button ng-click="addToShoppingCart(product._id)">Add to Shopping Cart</button>
+  </div>
+
+  <footer>
+    <a href="/#/admin">Go to Admin Page</a>
+  </footer>
+
+</div>

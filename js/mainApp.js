@@ -1,4 +1,4 @@
-angular.module("babyAmazon", ["ngRoute", "productsApp"])
+angular.module("babyAmazon", ["ngRoute", "adminApp"])
 
   .config(function($routeProvider) {
 
@@ -6,7 +6,14 @@ angular.module("babyAmazon", ["ngRoute", "productsApp"])
 
       .when("/", {
 
-        templateUrl:"views/home.html",
+        templateUrl:"views/user/userHome.html",
+        controller:"homeCtrl"
+
+      })
+
+      .when("/expandedProduct/:productId", {
+
+        templateUrl:"views/user/expandedProduct.html",
         controller:"homeCtrl"
 
       })

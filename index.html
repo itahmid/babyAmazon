@@ -8,14 +8,6 @@
 </head>
 <body ng-app="babyAmazon">
 
-  <header>
-    <h1>b<span class="fi-social-amazon"></span>byAmazon</h1>
-    <nav>
-      <p><a href="/#"><span class="fi-home"></span> Home</a></p>
-      <p class="newProduct"><a href="/#/newProduct"><span class="fi-plus"></span> New Product</a></p>
-    </nav>
-  </header>
-
   <!--Render different views here -->
   <div class="viewContainer" ng-view>
 
@@ -29,10 +21,10 @@
 <script src="js/mainApp.js"></script>
 <script src="js/homeCtrl.js"></script>
 
-<!--Product Module Scripts-->
-<script src="js/products/productsApp.js"></script>
-<script src="js/products/productsSvc.js"></script>
-<script src="js/products/productsCtrl.js"></script>
+<!--Admin Module Scripts-->
+<script src="js/admin/adminApp.js"></script>
+<script src="js/admin/adminSvc.js"></script>
+<script src="js/admin/adminCtrl.js"></script>
 
 </body>
 </html>

@@ -26,6 +26,17 @@ header {
       header nav p a:hover {
         color: #FF604C; }
 
+footer {
+  background-color: #3C56FF;
+  height: 90px; }
+  footer a {
+    padding-left: 5px;
+    vertical-align: -40px;
+    color: white;
+    text-decoration: none; }
+  footer a:hover {
+    text-decoration: underline; }
+
 .inventoryContainer {
   margin: 0%;
   text-align: center;
@@ -39,6 +50,8 @@ header {
     vertical-align: top;
     border: 1px solid black;
     background-color: white; }
+    .inventoryContainer .product button {
+      display: block; }
   .inventoryContainer .productInfo {
     display: inline-block;
     width: 45%;
