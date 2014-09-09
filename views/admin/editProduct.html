@@ -1,25 +1,38 @@
+<header>
+  <h1>b<span class="fi-social-amazon"></span>byAmazon admin</h1>
+  <nav>
+    <p><a href="/#/admin"><span class="fi-home"></span> Admin Home</a></p>
+    <p><a href="/#/admin/newProduct"><span class="fi-plus"></span> New Product</a></p>
+
+  </nav>
+</header>
+
 <div class="editProductContainer">
 
-  <form class="editProductForm" ng-submit="editProduct()">
+  <form class="editProductForm" ng-submit="editProduct(product)">
 
     <div class="nameSection">
       <h2>Product Name:</h2>
-      <input class="editProductName" type="text" ng-model="singleProduct.productName">
+      <input class="editProductName" type="text" ng-model="product.productName">
     </div>
 
     <div class="priceSection">
       <h2>Product Price:</h2>
-      <input class="editProductPrice" type="number" step="any" ng-model="singleProduct.productPrice">
+      <input class="editProductPrice" type="number" step="any" ng-model="product.productPrice">
     </div>
 
     <h2>Product Image URL:</h2>
-    <input class="editProductImage" type="text" ng-model="singleProduct.productImage">
+    <input class="editProductImage" type="text" ng-model="product.productImage">
 
     <h2>Product Description:</h2>
-    <textarea class="editProductDescription" cols="30" rows="10" ng-model="singleProduct.productDescription"></textarea>
+    <textarea class="editProductDescription" cols="30" rows="10" ng-model="product.productDescription"></textarea>
 
     <button type="submit">Submit</button>
-    
+
   </form>
 
 </div>
+
+<footer>
+  <a href="#">Go to Home Page</a>
+</footer>

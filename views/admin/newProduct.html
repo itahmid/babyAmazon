@@ -1,9 +1,18 @@
+<header>
+  <h1>b<span class="fi-social-amazon"></span>byAmazon admin</h1>
+  <nav>
+    <p><a href="/#/admin"><span class="fi-home"></span> Admin Home</a></p>
+    <p><a href="/#/admin/newProduct"><span class="fi-plus"></span> New Product</a></p>
+
+  </nav>
+</header>
+
 <div class="newProductContainer">
   <form class="newProductForm" ng-submit="addProduct(newProduct)">
     <h2>Product Name:</h2>
     <input type="text" ng-model="newProduct.name">
     <h2>Product Price:</h2>
-    <input type="number" ng-model="newProduct.amount">
+    <input type="number" step="any" ng-model="newProduct.amount">
     <h2>Product Image URL:</h2>
     <input type="text" ng-model="newProduct.image">
     <h2>Product Description:</h2>
@@ -11,3 +20,7 @@
     <button type="submit">Add New Product</button>
   </form>
 </div>
+
+<footer>
+  <a href="#">Go to Home Page</a>
+</footer>

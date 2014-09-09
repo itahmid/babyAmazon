@@ -16,26 +16,25 @@ angular.module("babyAmazon")
 
     });
 
-    //Add adminSvc shopping cart array to the view $scope.
-    //$scope.userShoppingCart = adminSvc.userShoppingCart
-
+    //Function to add adminSvc.userShoppingCart to the view $scope.
+    $scope.userShoppingCart = adminSvc.userShoppingCart;
 
     //Function to add an item to the shopping cart.
-    $scope.addToShoppingCart = function(productId) {
+    $scope.addToShoppingCart = function(product) {
 
-      adminSvc.getItem(productId).success(function(product) {
+      adminSvc.userShoppingCart.push({
 
-        adminSvc.userShoppingCart.push(product);
+        productName:product.productName,
+        productImage:product.productImage,
+        productQuantity:product.productQuantity,
+        productPrice:product.productPrice,
+        productDescription:product.productDescription
 
       });
 
+      console.log(adminSvc.userShoppingCart);
+
     };
-
-
-
-
-
-
 
 //$rootScope listeners to re-render page when a CRUD event occurs//
     $rootScope.$on("product:deleted", function() {

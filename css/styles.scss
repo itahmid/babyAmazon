@@ -48,8 +48,9 @@ header {
 }
 
 footer {
-  background-color:$blue;
   height:90px;
+  margin-top:1%;
+  background-color:$blue;
 
   a {
     padding-left:5px;
@@ -72,21 +73,28 @@ footer {
     margin:1%;
     padding:1%;
     width:45%;
-    height:350px;
+    height:375px;
     display:inline-block;
     vertical-align:top;
     border:1px solid black;
     background-color:white;
-
-    button {
-      display:block;
-    }
   }
 
   .productInfo {
     display:inline-block;
     width:45%;
     vertical-align:top;
+
+    .addToCart {
+
+      p, select, button {
+        display:inline-block;
+      }
+
+      p {
+        vertical-align:-2px;
+      }
+    }
   }
 
   .productName{
@@ -154,5 +162,49 @@ footer {
 
   .editProductImage {
     width:50%;
+  }
+}
+
+.adminProductListing {
+  padding:1%;
+}
+
+.productSummary {
+  margin:1% 0;
+  padding:1%;
+  background-color:white;
+
+  a {
+    display:block;
+    text-decoration:none;
+    padding:0 4.5%;
+    padding-top: 1%;
+    color:black;
+  }
+
+  a:hover {
+    text-decoration:underline;
+    color:$blue;
+  }
+
+  .adminProductImage {
+    margin:0;
+    padding:0;
+    width:15%;
+    display:inline-block;
+  }
+
+  .adminProductInfo {
+    display:inline-block;
+    width:80%;
+    vertical-align:top;
+
+    .adminProductName {
+      margin-top:1%;
+    }
+
+    .adminProductDescription {
+      margin-bottom:0;
+    }
   }
 }

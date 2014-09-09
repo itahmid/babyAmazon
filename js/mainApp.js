@@ -18,6 +18,13 @@ angular.module("babyAmazon", ["ngRoute", "adminApp"])
 
       })
 
+      .when("/shoppingCart", {
+
+        templateUrl:"views/user/shoppingCart.html",
+        controller:"homeCtrl"
+
+      })
+
       .otherwise({
 
         redirectTo:"/"

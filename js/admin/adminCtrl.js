@@ -1,13 +1,24 @@
 angular.module("adminApp")
 
-  .controller("adminCtrl", function($scope, adminProductSvc, $routeParams, $location, $rootScope) {
+  .controller("adminCtrl", function($scope, adminSvc, $routeParams, $location, $rootScope) {
 
-    $scope.inventory = adminProductSvc.getInventory();
-    $scope.singleProduct = adminProductSvc.getItem($routeParams.index);
+    //Function to get my inventory from the server and set it to the view $scope.
+    adminSvc.getInventory().success(function(inventory) {
+
+      $scope.inventory = inventory;
+
+    });
+
+    //Function to get a single product from the inventory and set it to the view $scope.
+    adminSvc.getItem($routeParams.productId).success(function(product) {
+
+      $scope.product = product;
+
+    });
 
     $scope.addProduct = function(product) {
 
-      adminProductSvc.addInventoryItem({
+      adminSvc.addInventoryItem({
 
         productName:product.name,
         productPrice:product.amount,
@@ -17,26 +28,25 @@ angular.module("adminApp")
 
       });
 
-      $location.path("/");
+      $location.path("/admin");
 
     };
 
     $rootScope.$on("product:added", function() {
 
-      $scope.inventory = adminProductSvc.getInventory();
+      $scope.inventory = adminSvc.getInventory();
 
     });
 
-    $scope.editProduct = function() {
+    $scope.editProduct = function(product) {
 
-      adminProductSvc.editInventoryItem();
-      $location.path("/");
+      adminSvc.editInventoryItem(product);
 
     };
 
     $rootScope.$on("product:edited", function() {
 
-      $scope.inventory = adminProductSvc.getInventory();
+      $scope.inventory = adminSvc.getInventory();
 
     });
   });

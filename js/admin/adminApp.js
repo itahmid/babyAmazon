@@ -18,7 +18,7 @@ angular.module("adminApp", ["ngRoute"])
 
       })
 
-      .when("/admin/editProduct/:id", {
+      .when("/admin/editProduct/:productId", {
 
         templateUrl:"views/admin/editProduct.html",
         controller:"adminCtrl"

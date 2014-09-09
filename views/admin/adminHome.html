@@ -8,10 +8,18 @@
   </nav>
 </header>
 
+<section class="adminProductListing">
+  <div class="productSummary" ng-repeat="product in inventory">
+    <img class="adminProductImage" ng-src="{{product.productImage}}" alt="">
+    <div class="adminProductInfo">
+      <h3 class="adminProductName">{{product.productName}}</h3>
+      <h4 class="adminProductPrice">{{product.productPrice | currency}}</h4>
+      <p class="adminProductDescription">{{product.productDescription}}</p>
+    </div>
+    <a href="/#/admin/editProduct/{{product._id}}">Edit Product</a>
+  </div>
+</section>
+
 <footer>
   <a href="#">Go to Home Page</a>
 </footer>
-
-<a href="#/"></a>
-<a href=""></a>
-<a href=""></a>
