@@ -2,8 +2,6 @@ angular.module("babyAmazon")
 
   .controller("homeCtrl", function($scope, adminSvc, $rootScope, $routeParams, $log) {
 
-    $scope.userShoppingCart = adminSvc.userShoppingCart;
-
     //Function to get my inventory from the server and set it to the view $scope.
     adminSvc.getInventory().success(function(inventory) {
 
@@ -42,6 +40,20 @@ angular.module("babyAmazon")
 
     $scope.checkoutTotal = adminSvc.checkoutTotal();
 
+    //Function to delete item from shopping cart.
+    $scope.deleteProduct = function(productIndex) {
+
+      $scope.userShoppingCart.splice(productIndex, 1);
+      $rootScope.$broadcast("shoppingCart:deleted");
+
+    };
+
+    $scope.updateCart = function() {
+
+      $rootScope.$broadcast("shoppingCart:updated");
+
+    };
+
 //$rootScope listeners to re-render page when a CRUD event occurs//
 
     $rootScope.$on("product:edited", function() {
@@ -66,7 +78,13 @@ angular.module("babyAmazon")
 
     $rootScope.$on("shoppingCart:updated", function() {
 
-      $scope.checkoutTotal;
+      $scope.checkoutTotal = adminSvc.checkoutTotal();
+
+    });
+
+    $rootScope.$on("shoppingCart:deleted", function() {
+
+      $scope.checkoutTotal = adminSvc.checkoutTotal();
 
     });
 

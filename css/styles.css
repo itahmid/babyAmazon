@@ -77,6 +77,15 @@ footer {
     margin: 0 5px;
     color: #367DE8; }
 
+.singleProductContainer {
+  padding: 2% 15%;
+  text-align: center; }
+  .singleProductContainer .singleProduct {
+    padding: 1%;
+    background-color: white; }
+    .singleProductContainer .singleProduct .singleProductImage {
+      width: 25%; }
+
 .editProductContainer {
   padding: 2%;
   background-color: #FF604C;
@@ -134,4 +143,20 @@ footer {
       margin-bottom: 0; }
 
 .shoppingCartProduct {
+  padding: 1%;
+  width: 100%;
   border-bottom: 1px solid black; }
+  .shoppingCartProduct .shoppingCartImage {
+    display: inline-block;
+    width: 8%; }
+  .shoppingCartProduct .shoppingCartInfo {
+    display: inline-block;
+    width: 78%; }
+  .shoppingCartProduct .subtotal {
+    margin-top: 0; }
+  .shoppingCartProduct button {
+    margin: 0.5%; }
+
+.checkoutTotal {
+  background-color: white;
+  margin: 0; }
