@@ -8,7 +8,14 @@ angular.module("babyAmazon")
 
       productsSvc.deleteInventoryItem(index);
 
+
     };
+
+    $rootScope.$on("product:deleted", function() {
+
+      $scope.inventory = productsSvc.getInventory();
+
+    });
 
 
   });
