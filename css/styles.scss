@@ -103,12 +103,36 @@ header {
 }
 
 .editProductContainer {
-  margin:0;
   padding:2%;
   background-color:$clay;
+  text-align:center;
 
   h2 {
     margin:0;
     padding:1% 0;
+  }
+
+  form {
+    background-color:white;
+    width:65%;
+
+    button {
+      display:block;
+      text-align:center;
+      margin:2% 47%;
+    }
+  }
+
+  .nameSection, .priceSection {
+    display:inline-block;
+    margin:0 2%;
+
+    .editProductName, .editProductPrice {
+      width:100%;
+    }
+  }
+
+  .editProductImage {
+    width:50%;
   }
 }

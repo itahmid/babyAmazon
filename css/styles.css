@@ -62,9 +62,23 @@ header {
     color: #367DE8; }
 
 .editProductContainer {
-  margin: 0;
   padding: 2%;
-  background-color: #FF604C; }
+  background-color: #FF604C;
+  text-align: center; }
   .editProductContainer h2 {
     margin: 0;
     padding: 1% 0; }
+  .editProductContainer form {
+    background-color: white;
+    width: 65%; }
+    .editProductContainer form button {
+      display: block;
+      text-align: center;
+      margin: 2% 47%; }
+  .editProductContainer .nameSection, .editProductContainer .priceSection {
+    display: inline-block;
+    margin: 0 2%; }
+    .editProductContainer .nameSection .editProductName, .editProductContainer .nameSection .editProductPrice, .editProductContainer .priceSection .editProductName, .editProductContainer .priceSection .editProductPrice {
+      width: 100%; }
+  .editProductContainer .editProductImage {
+    width: 50%; }

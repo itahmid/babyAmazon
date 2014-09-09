@@ -1,9 +1,13 @@
 <div class="editProductContainer">
   <form class="editProductForm" ng-submit="editProduct()">
-    <h2>Product Name:</h2>
-    <input class="editProductName" type="text" ng-model="singleProduct.productName">
-    <h2>Product Price:</h2>
-    <input class="editProductPrice" type="number" step="any" ng-model="singleProduct.productPrice">
+    <div class="nameSection">
+      <h2>Product Name:</h2>
+      <input class="editProductName" type="text" ng-model="singleProduct.productName">
+    </div>
+    <div class="priceSection">
+      <h2>Product Price:</h2>
+      <input class="editProductPrice" type="number" step="any" ng-model="singleProduct.productPrice">
+    </div>
     <h2>Product Image URL:</h2>
     <input class="editProductImage" type="text" ng-model="singleProduct.productImage">
     <h2>Product Description:</h2>
