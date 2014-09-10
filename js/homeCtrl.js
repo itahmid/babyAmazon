@@ -45,35 +45,6 @@ angular.module("babyAmazon")
 
     };
 
-    //Function to add an item to the shopping cart.
-
-    $scope.addToShoppingCart = function(product) {
-
-      adminSvc.userShoppingCart.push({
-
-        productName:product.name,
-        productImage:product.image,
-        productQuantity:Number(product.quantity),
-        productPrice:product.price,
-        productDescription:product.sescription
-
-      });
-
-      $rootScope.$broadcast("shoppingCart:updated");
-      $log.info("shoppingCart:updated");
-
-    };
-
-    $scope.checkoutTotal = adminSvc.checkoutTotal();
-
-    //Function to delete item from shopping cart.
-    $scope.deleteProduct = function(productIndex) {
-
-      $scope.userShoppingCart.splice(productIndex, 1);
-      $rootScope.$broadcast("shoppingCart:deleted");
-
-    };
-
     $scope.updateCart = function() {
 
       $rootScope.$broadcast("shoppingCart:updated");
@@ -104,7 +75,11 @@ angular.module("babyAmazon")
 
     $rootScope.$on("shoppingCart:updated", function() {
 
-      $scope.checkoutTotal = adminSvc.checkoutTotal();
+      adminSvc.getShoppingCart().success(function(shoppingCart) {
+
+        $scope.shoppingCart = shoppingCart;
+
+      });
 
     });
 

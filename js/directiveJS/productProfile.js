@@ -21,7 +21,7 @@ angular.module("babyAmazon")
 
           var productId = $(this).attr("data");
           var databaseUrl = "http://tiy-fee-rest.herokuapp.com/collections/babyAmazon";
-          var productQuantity = $(".quantity").val();
+          var productQuantity = $(this).siblings(".quantity").val();
 
           $.ajax({
 

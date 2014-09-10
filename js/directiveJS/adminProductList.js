@@ -1,6 +1,6 @@
 angular.module("adminApp")
 
-  .directive("adminProductList", function() {
+  .directive("adminProductList", function(adminSvc, $rootScope) {
 
     return {
 
@@ -17,10 +17,11 @@ angular.module("adminApp")
       },
       link:function(scope, element, attrs) {
 
+        var databaseUrl = "http://tiy-fee-rest.herokuapp.com/collections/babyAmazon";
+
         element.on("click", ".deleteProduct", function() {
 
           var productId = $(this).attr("data");
-          var databaseUrl = "http://tiy-fee-rest.herokuapp.com/collections/babyAmazon";
           console.log(productId);
 
           $.ajax({
@@ -30,7 +31,7 @@ angular.module("adminApp")
 
           }).success(function(data) {
 
-            console.log(data);
+            $rootScope.$broadcast("product:deleted");
 
           });
 

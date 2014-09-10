@@ -11,7 +11,7 @@
 
 <section class="adminProductListing">
   <div class="productSummary" ng-repeat="product in inventory">
-    <admin-product-list name="{{product.productName}}" image="{{product.productImage}}" description="{{product.productDescription}}" price="{{product.productPrice}}" id="{{product._id}}">
+    <admin-product-list getinventory="{{getInventory()}}" name="{{product.productName}}" image="{{product.productImage}}" description="{{product.productDescription}}" price="{{product.productPrice}}" id="{{product._id}}">
     </admin-product-list>
   </div>
 </section>

@@ -1,6 +1,6 @@
 angular.module("babyAmazon")
 
-  .directive("shoppingCart", function() {
+  .directive("shoppingCart", function($rootScope) {
 
     return{
 
@@ -30,7 +30,7 @@ angular.module("babyAmazon")
 
           }).success(function(response) {
 
-            console.log("Deleted");
+            $rootScope.$broadcast("shoppingCart:updated")
 
           });
 
