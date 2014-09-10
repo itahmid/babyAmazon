@@ -1,0 +1,8 @@
+<img class="adminProductImage" ng-src="{{image}}" alt="">
+<div class="adminProductInfo">
+  <h3 class="adminProductName">{{name}}</h3>
+  <h4 class="adminProductPrice">{{price | currency}}</h4>
+  <p class="adminProductDescription">{{description}}</p>
+</div>
+<a href="/#/admin/editProduct/{{id}}">Edit Product</a>
+<a data="{{id}}" class="deleteProduct" href="">Delete Product</a>
