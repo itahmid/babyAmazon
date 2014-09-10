@@ -2,7 +2,7 @@ angular.module("adminApp")
 
   .factory("adminSvc", function($rootScope, $log, $http) {
 
-    var databaseUrl = "http://tiy-fee-rest.herokuapp.com/collections/babyAmazon"
+    var databaseUrl = "http://tiy-fee-rest.herokuapp.com/collections/babyAmazon";
 
     var getInventory = function() {
 
@@ -51,21 +51,17 @@ angular.module("adminApp")
 
     //FUNCTIONS RELATING TO THE SHOPPING CART//
 
-    var userShoppingCart = [];
+    var shoppingCartUrl = "http://tiy-fee-rest.herokuapp.com/collections/babyAmazon_shoppingCart";
+
+    var getShoppingCart = function() {
+
+      return $http.get(shoppingCartUrl);
+
+    };
 
     var checkoutTotal = function() {
 
-      var total = 0;
-
-      for (var i = 0; i < userShoppingCart.length; i++) {
-
-        var index = userShoppingCart[i];
-
-        total += (index.productPrice * index.productQuantity);
-
-      };
-
-      return total;
+      console.log();
 
     };
 
@@ -76,7 +72,8 @@ angular.module("adminApp")
       addInventoryItem:addInventoryItem,
       editInventoryItem:editInventoryItem,
       deleteInventoryItem:deleteInventoryItem,
-      userShoppingCart:userShoppingCart,
+      shoppingCartUrl:shoppingCartUrl,
+      getShoppingCart:getShoppingCart,
       checkoutTotal:checkoutTotal
 
     }

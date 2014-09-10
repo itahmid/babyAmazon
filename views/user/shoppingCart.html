@@ -11,24 +11,10 @@
 
 <div class="shoppingCartContainer">
 
-  <div class="shoppingCartProduct" ng-repeat="product in userShoppingCart">
-    <img class="shoppingCartImage" ng-src="{{product.productImage}}" alt="">
-    <div class="shoppingCartInfo">
-      <h3>{{product.productName}}</h3>
-      <h4>Price: <em>{{product.productPrice | currency}}</em></h4>
-      <h4>Quantity:
-        <select class="quantity" ng-model="product.productQuantity" ng-value="product.productQuantity">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-      </h4>
-      </div>
-    <h3 class="subtotal">Subtotal: {{(product.productPrice * product.productQuantity) | currency}}</h3>
-    <button ng-click="updateCart()">Update Cart</button>
-    <button ng-click="deleteProduct($index)">Remove From Cart</button>
+  <div class="shoppingCartProduct" ng-repeat="product in shoppingCart">
+    <shopping-cart name="{{product.name}}" price="{{product.price}}" quantity="{{product.quantity}}" id="{{product._id}}" image="{{product.image}}">
+
+    </shopping-cart>
   </div>
 
   <h1 class="checkoutTotal">Total: {{checkoutTotal | currency}}</h1>

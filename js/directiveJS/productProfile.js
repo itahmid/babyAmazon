@@ -17,11 +17,11 @@ angular.module("babyAmazon")
       },
       link: function(scope, element, attrs) {
 
-        element.on("click", "button", function() {
+        element.on("click", ".addToCart", function() {
 
           var productId = $(this).attr("data");
           var databaseUrl = "http://tiy-fee-rest.herokuapp.com/collections/babyAmazon";
-          var quantity = $(".quantity").val();
+          var productQuantity = $(".quantity").val();
 
           $.ajax({
 
@@ -35,7 +35,7 @@ angular.module("babyAmazon")
 
               name:data.productName,
               price:data.productPrice,
-              quantity:Number(quantity),
+              quantity:Number(productQuantity),
               image:data.productImage
 
             }

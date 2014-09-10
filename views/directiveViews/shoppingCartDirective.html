@@ -1,0 +1,19 @@
+<!-- directive: shoppingCart.js -->
+
+<img class="shoppingCartImage" ng-src="{{image}}" alt="">
+<div class="shoppingCartInfo">
+  <h3>{{name}}</h3>
+  <h4>Price: <em>{{price | currency}}</em></h4>
+  <h4>Quantity:
+    <select class="quantity" ng-model="quantity" ng-value="{{quantity}}">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </h4>
+  </div>
+<h3 class="subtotal">Subtotal: {{(price * quantity) | currency}}</h3>
+<button>Update Cart</button>
+<button data="{{id}}" class="removeFromCart">Remove From Cart</button>

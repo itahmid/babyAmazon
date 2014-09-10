@@ -4,15 +4,15 @@
 <div class="productInfo">
   <h2 class="productName"><a href="#/expandedProduct/{{id}}" ng-model="product.name">{{name}}</a></h2>
   <h3 class="productPrice" ng-model="product.price">{{price | currency}}</h3>
-  <div class="addToCart">
-    <p>Quantity: </p><select class="quantity" ng-model="product.quantity">
+  <div class="addToCartContainer">
+    <p>Quantity: </p><select class="quantity" value="product.quantity">
       <option>1</option>
       <option>2</option>
       <option>3</option>
       <option>4</option>
       <option>5</option>
     </select>
-    <button data="{{id}}" class="addToShoppingCart" ng-click="addToShoppingCart(product)">Add to Shopping Cart</button>
+    <button class="addToCart" data="{{id}}">Add to Shopping Cart</button>
   </div>
 </div>
 <p class="productDescription" ng-model="product.description">{{description.substring(0, 200)}}...</p>

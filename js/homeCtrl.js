@@ -9,6 +9,13 @@ angular.module("babyAmazon")
 
     });
 
+    //Function to get my shopping cart from the server and set it to the view $scope.
+    adminSvc.getShoppingCart().success(function(shoppingCart) {
+
+      $scope.shoppingCart = shoppingCart;
+
+    });
+
     //Function to get a single product from the inventory and set it to the view $scope.
     adminSvc.getItem($routeParams.productId).success(function(product) {
 
@@ -37,9 +44,6 @@ angular.module("babyAmazon")
       $scope.comment = {};
 
     };
-
-    //Function to add adminSvc.userShoppingCart to the view $scope.
-    $scope.userShoppingCart = adminSvc.userShoppingCart;
 
     //Function to add an item to the shopping cart.
 
@@ -106,7 +110,11 @@ angular.module("babyAmazon")
 
     $rootScope.$on("shoppingCart:deleted", function() {
 
-      $scope.checkoutTotal = adminSvc.checkoutTotal();
+      adminSvc.getShoppingCart().success(function(shoppingCart) {
+
+        $scope.shoppingCart = shoppingCart;
+
+      });
 
     });
 
