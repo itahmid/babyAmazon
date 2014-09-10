@@ -23,7 +23,8 @@ angular.module("adminApp")
         productName:product.name,
         productPrice:product.amount,
         productDescription:product.description,
-        productImage:product.image
+        productImage:product.image,
+        productComments:[]
 
 
       });

@@ -16,6 +16,28 @@ angular.module("babyAmazon")
 
     });
 
+    //Function to add comment into the product.
+    $scope.addComment = function(comment) {
+
+      adminSvc.getItem($routeParams.productId).success(function(product) {
+
+        $scope.product = product;
+        $scope.product.productComments.push({
+
+          commentAuthor:comment.author,
+          commentDescription:comment.description,
+          commentDate:new Date()
+
+        });
+
+        adminSvc.editInventoryItem(product);
+
+      });
+
+      $scope.comment = {};
+
+    };
+
     //Function to add adminSvc.userShoppingCart to the view $scope.
     $scope.userShoppingCart = adminSvc.userShoppingCart;
 

@@ -161,6 +161,17 @@ footer {
       color:$lightblue;
     }
   }
+
+  .commentContainer {
+    text-align:left;
+  }
+
+  .commentInfo {
+
+    h3, input {
+      display:inline-block;
+    }
+  }
 }
 
 //SHOPPINGCART.HTML//

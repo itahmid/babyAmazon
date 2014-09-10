@@ -92,6 +92,10 @@ footer {
       width: 25%; }
     .singleProductContainer .singleProduct .singleProductName {
       color: #367DE8; }
+  .singleProductContainer .commentContainer {
+    text-align: left; }
+  .singleProductContainer .commentInfo h3, .singleProductContainer .commentInfo input {
+    display: inline-block; }
 
 .shoppingCartProduct {
   padding: 1%;
