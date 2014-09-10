@@ -185,12 +185,18 @@ footer {
 
   .shoppingCartImage {
     display:inline-block;
-    width:8%;
+    width:15%;
   }
 
   .shoppingCartInfo {
     display:inline-block;
     width:78%;
+
+    .shoppingCartQuantity, .quantity {
+      display:inline-block;
+      margin:0;
+      margin-bottom:1%;
+    }
   }
 
   .subtotal {

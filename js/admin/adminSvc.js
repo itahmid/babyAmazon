@@ -61,7 +61,19 @@ angular.module("adminApp")
 
     var checkoutTotal = function() {
 
-      console.log();
+      var total = 0;
+
+      getShoppingCart().success(function(data) {
+
+        for (var i = 0; i < data.length; i++) {
+
+          total += (data[i].quantity * data[i].price);
+
+        };
+
+        return total;
+
+      });
 
     };
 

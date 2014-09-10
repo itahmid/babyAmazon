@@ -17,10 +17,11 @@ angular.module("babyAmazon")
       },
       link: function(scope, element, attrs) {
 
+        var shoppingCartUrl = "http://tiy-fee-rest.herokuapp.com/collections/babyAmazon_shoppingCart";
+
         element.on("click", ".removeFromCart", function() {
 
           var shoppingCartId = $(this).attr("data");
-          var shoppingCartUrl = "http://tiy-fee-rest.herokuapp.com/collections/babyAmazon_shoppingCart";
 
           $.ajax({
 
@@ -30,6 +31,31 @@ angular.module("babyAmazon")
           }).success(function(response) {
 
             console.log("Deleted");
+
+          });
+
+        });
+
+        element.on("click", ".updateCart", function() {
+
+          var shoppingCartId = $(this).attr("data");
+          var updatedCart = {
+
+            quantity:$(this).siblings(".shoppingCartInfo").children(".quantity").val()
+
+          };
+
+          console.log(updatedCart);
+
+          $.ajax({
+
+            url:shoppingCartUrl + "/" + shoppingCartId,
+            type:"PUT",
+            data:updatedCart
+
+          }).success(function(data) {
+
+            console.log(data);
 
           });
 

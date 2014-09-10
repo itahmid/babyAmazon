@@ -105,10 +105,14 @@ footer {
   border-bottom: 1px solid black; }
   .shoppingCartProduct .shoppingCartImage {
     display: inline-block;
-    width: 8%; }
+    width: 15%; }
   .shoppingCartProduct .shoppingCartInfo {
     display: inline-block;
     width: 78%; }
+    .shoppingCartProduct .shoppingCartInfo .shoppingCartQuantity, .shoppingCartProduct .shoppingCartInfo .quantity {
+      display: inline-block;
+      margin: 0;
+      margin-bottom: 1%; }
   .shoppingCartProduct .subtotal {
     margin-top: 0; }
   .shoppingCartProduct button {
