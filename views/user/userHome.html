@@ -1,4 +1,4 @@
-<!-- templateUrl:"views/user/userHome.html" | controller:"homeCtrl" -->
+<!-- controller:"homeCtrl" -->
 
 <header>
   <h1>b<span class="fi-social-amazon"></span>byAmazon</h1>
@@ -11,7 +11,7 @@
 
 <div class="inventoryContainer">
 
-  <div class="product" ng-repeat="product in inventory">
+  <div class="product" ng-repeat="product in inventory | filter:product.productPrice">
     <img class="productImage" ng-src="{{product.productImage}}" alt="" ng-model="product.productImage">
     <div class="productInfo">
       <h2 class="productName"><a href="#/expandedProduct/{{product._id}}" ng-model="product.productName">{{product.productName}}</a></h2>
@@ -28,7 +28,7 @@
       </div>
     </div>
     <p class="productDescription" ng-model="product.productDescription">{{product.productDescription.substring(0, 200)}}...</p>
-    <a href="#/expandedProduct/{{product._id}}">Learn More</a>
+    <a class="learnMore" href="#/expandedProduct/{{product._id}}">Learn More</a>
   </div>
 
   <footer>

@@ -1,3 +1,5 @@
+<!-- controller:"adminCtrl" -->
+
 <header>
   <h1>b<span class="fi-social-amazon"></span>byAmazon admin</h1>
   <nav>
@@ -9,15 +11,21 @@
 
 <div class="newProductContainer">
   <form class="newProductForm" ng-submit="addProduct(newProduct)">
-    <h2>Product Name:</h2>
-    <input type="text" ng-model="newProduct.name">
-    <h2>Product Price:</h2>
-    <input type="number" step="any" ng-model="newProduct.amount">
+    <div class="newProductName">
+      <h2>Product Name:</h2>
+      <input type="text" ng-model="newProduct.name">
+    </div>
+    <div class="newProductPrice">
+      <h2>Product Price:</h2>
+      <input type="number" step="any" ng-model="newProduct.amount">
+    </div>
     <h2>Product Image URL:</h2>
     <input type="text" ng-model="newProduct.image">
     <h2>Product Description:</h2>
     <textarea name="newProductDescription" id="" cols="30" rows="10" ng-model="newProduct.description"></textarea>
-    <button type="submit">Add New Product</button>
+    <div class="buttonContainer">
+      <button type="submit">Add New Product</button>
+    </div>
   </form>
 </div>
 

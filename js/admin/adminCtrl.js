@@ -50,6 +50,8 @@ angular.module("adminApp")
 
       adminSvc.editInventoryItem(product);
 
+      $location.path("/admin");
+
     };
 
     $rootScope.$on("product:deleted", function() {

@@ -51,13 +51,7 @@ angular.module("adminApp")
 
     //FUNCTIONS RELATING TO THE SHOPPING CART//
 
-    var userShoppingCart = [{
-    productName: "Munchkin 'White Hot' Duck Bath Toy",
-    productPrice: 2.99,
-    productQuantity: 3,
-    productDescription: "Test the waters with America's #1 Safety Duck. No need to worry that your baby's bath water is too hot to handle. This adorable rubber ducky has our White Hot safety disc at the bottom that tells you when the water is too hot, then let's you know that it's safe to put your baby in. And, it's just the right size for little hands to hold and cuddle.",
-    productImage: "http://ecx.images-amazon.com/images/I/71d-yPz2g6L._SX425_.jpg"
-  }];
+    var userShoppingCart = [];
 
     var checkoutTotal = function() {
 
