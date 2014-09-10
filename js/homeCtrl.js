@@ -45,11 +45,7 @@ angular.module("babyAmazon")
 
     };
 
-    $scope.updateCart = function() {
-
-      $rootScope.$broadcast("shoppingCart:updated");
-
-    };
+    $scope.checkoutTotal = adminSvc.checkoutTotal();
 
 //$rootScope listeners to re-render page when a CRUD event occurs//
 

@@ -17,6 +17,6 @@
     </shopping-cart>
   </div>
 
-  <h1 class="checkoutTotal">Total:</h1>
+  <h1 class="checkoutTotal" ng-init="checkoutTotal()">Total:{{checkoutTotal() | currency}}</h1>
 
 </div>
