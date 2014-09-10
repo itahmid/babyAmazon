@@ -11,24 +11,10 @@
 
 <div class="inventoryContainer">
 
-  <div class="product" ng-repeat="product in inventory | filter:product.productPrice">
-    <img class="productImage" ng-src="{{product.productImage}}" alt="" ng-model="product.productImage">
-    <div class="productInfo">
-      <h2 class="productName"><a href="#/expandedProduct/{{product._id}}" ng-model="product.productName">{{product.productName}}</a></h2>
-      <h3 class="productPrice" ng-model="product.productPrice">{{product.productPrice | currency}}</h3>
-      <div class="addToCart">
-        <p>Quantity: </p><select class="quantity" ng-model="product.productQuantity">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </select>
-        <button ng-click="addToShoppingCart(product)">Add to Shopping Cart</button>
-      </div>
-    </div>
-    <p class="productDescription" ng-model="product.productDescription">{{product.productDescription.substring(0, 200)}}...</p>
-    <a class="learnMore" href="#/expandedProduct/{{product._id}}">Learn More</a>
+  <div class="product" ng-repeat="product in inventory">
+    <product-profile name="{{product.productName}}" price="{{product.productPrice}}" image="{{product.productImage}}" description="{{product.productDescription}}" id="{{product._id}}">
+
+    </product-profile>
   </div>
 
   <footer>

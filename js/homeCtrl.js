@@ -47,11 +47,11 @@ angular.module("babyAmazon")
 
       adminSvc.userShoppingCart.push({
 
-        productName:product.productName,
-        productImage:product.productImage,
-        productQuantity:Number(product.productQuantity),
-        productPrice:product.productPrice,
-        productDescription:product.productDescription
+        productName:product.name,
+        productImage:product.image,
+        productQuantity:Number(product.quantity),
+        productPrice:product.price,
+        productDescription:product.sescription
 
       });
 

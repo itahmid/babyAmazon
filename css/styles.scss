@@ -16,6 +16,7 @@ body{
 header {
   background-color:$blue;
   color:white;
+  border-bottom:1px solid white;
 
   h1, nav {
     display:inline-block;
@@ -53,6 +54,7 @@ footer {
   height:90px;
   margin-top:1%;
   background-color:$blue;
+  border-top:1px solid white;
 
   a {
     padding:2.8% 2%;
@@ -123,7 +125,7 @@ footer {
   }
 
   .productImage {
-    width:45%;
+    width:35%;
     height:200px;
     display:inline-block;
     text-align:center;

@@ -7,7 +7,8 @@ body {
 
 header {
   background-color: #3C56FF;
-  color: white; }
+  color: white;
+  border-bottom: 1px solid white; }
   header h1, header nav {
     display: inline-block; }
   header h1 {
@@ -29,7 +30,8 @@ header {
 footer {
   height: 90px;
   margin-top: 1%;
-  background-color: #3C56FF; }
+  background-color: #3C56FF;
+  border-top: 1px solid white; }
   footer a {
     padding: 2.8% 2%;
     color: white;
@@ -70,7 +72,7 @@ footer {
   .inventoryContainer .productName a:hover {
     text-decoration: underline; }
   .inventoryContainer .productImage {
-    width: 45%;
+    width: 35%;
     height: 200px;
     display: inline-block;
     text-align: center; }

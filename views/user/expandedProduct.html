@@ -5,7 +5,6 @@
   <nav>
     <p><a href="/#"><span class="fi-home"></span> Home</a></p>
     <p><a href="/#/shoppingCart"><span class="fi-shopping-cart"></span> Shopping Cart</a></p>
-
   </nav>
 </header>
 
@@ -17,22 +16,22 @@
     <p class="singleProductDescription">{{product.productDescription}}</p>
     <a href="/#">Back to home page</a>
     <div class="commentContainer">
-      <h2>User Comments: </h2>
-      <div ng-repeat="comment in product.productComments">
-        <p class="commentDescription">{{comment.commentDescription}} - <em>{{comment.commentAuthor}}</em></p>
-        <p class="commentDate"><strong>{{comment.commentDate | date}}</strong></p>
+    <h2>User Comments: </h2>
+    <div ng-repeat="comment in product.productComments">
+      <p class="commentDescription">{{comment.commentDescription}} - <em>{{comment.commentAuthor}}</em></p>
+      <p class="commentDate"><strong>{{comment.commentDate | date}}</strong></p>
+    </div>
+    <h3>Add Comment: </h3>
+    <form ng-submit="addComment(comment)">
+      <div class="commentInfo">
+        <h3>Author: </h3>
+        <input type="text" ng-model="comment.author">
       </div>
-      <h3>Add Comment: </h3>
-      <form ng-submit="addComment(comment)">
-        <div class="commentInfo">
-          <h3>Author: </h3>
-          <input type="text" ng-model="comment.author">
-        </div>
-        <textarea ng-model="comment.description" cols="30" rows="10" placeholder="Enter comment here"></textarea>
-        <div class="buttonContainer">
-          <button type="submit" class="commentSubmit">Add Comment</button>
-        </div>
-      </form>
+      <textarea ng-model="comment.description" cols="30" rows="10" placeholder="Enter comment here"></textarea>
+      <div class="buttonContainer">
+        <button type="submit" class="commentSubmit">Add Comment</button>
+      </div>
+    </form>
     </div>
   </div>
 </div>
