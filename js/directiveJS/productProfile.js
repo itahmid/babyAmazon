@@ -38,7 +38,7 @@ angular.module("babyAmazon")
               quantity:Number(productQuantity),
               image:data.productImage
 
-            }
+            };
 
             $.ajax({
 
